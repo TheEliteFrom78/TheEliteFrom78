@@ -1,0 +1,17 @@
+local guiURL = "https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/komdivhub"
+local guiLoaded = false
+
+local function loadGui()
+    if not guiLoaded then
+        local guiScript = game:HttpGet(guiURL)
+        local gui = loadstring(guiScript)()
+        gui.Parent = game:GetService("CoreGui")
+        guiLoaded = true
+    end
+end
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.H and not gameProcessed then
+        loadGui()
+    end
+end)
