@@ -1,0 +1,498 @@
+ --AlphabetHub-- 
+
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if v:IsA("Accessory") then
+print(v)
+end
+end
+ 
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Accessory") and v.Handle:FindFirstChild("SpecialMesh") then
+    ag = v.Handle:FindFirstChild("SpecialMesh")
+    ag:Destroy()
+    end
+    end
+ 
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Accessory") and v.Handle:FindFirstChild("Mesh") then
+    ag = v.Handle:FindFirstChild("Mesh")
+    ag:Destroy()
+    end
+    end
+ 
+    wait()
+ 
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if v:IsA("Accessory") then
+		    v.Handle.Transparency = 1
+            v.Handle.Parent = workspace
+			v.Parent = workspace
+		end
+    end
+ 
+    wait(0.1)
+ 
+    game.Players.LocalPlayer.Character:BreakJoints()
+ 
+    wait(6)
+ 
+local unanchoredparts = {}
+local movers = {}
+ local tog = true
+ local move = false
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+local mov = {};
+local mov2 = {};
+ 
+local Head = "MeshPartAccessory" --press f9 and find the hat that looks like a heads name and put it here
+local x = 0   --Edit Position for head
+local y = -20   --Edit Position for head x2
+local z = 1 --Edit Position for head x3
+ 
+ 
+local Hats = {rightarm = Character:WaitForChild("Hat1"),
+             leftarm  = Character:WaitForChild("Pal Hair"),
+             rightleg = Character:WaitForChild("LavanderHair"),
+             leftleg  = Character:WaitForChild("Pink Hair"),
+              torso1   = Character:WaitForChild("Robloxclassicred"),
+             torso2   = Character:WaitForChild("Kate Hair"),
+ 
+}
+ 
+for i,v in next, Hats do
+v.Handle.AccessoryWeld:Remove()
+for _,mesh in next, v:GetDescendants() do
+if mesh:IsA("Mesh") or mesh:IsA("SpecialMesh") then
+mesh:Remove()
+end
+end
+end
+local Network = coroutine.create(function()
+while true do
+game:GetService("RunService").Heartbeat:Wait()
+settings().Physics.AllowSleep = false
+game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("Players").LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end
+end)
+coroutine.resume(Network)
+ 
+function ftp(str)
+    local pt = {};
+    if str ~= 'me' and str ~= 'random' then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():find(str:lower()) then
+                table.insert(pt, v);
+            end
+        end
+    elseif str == 'me' then
+        table.insert(pt, plr);
+	elseif str == 'random' then
+		table.insert(pt, game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]);
+    end
+    return pt;
+end
+ 
+Character.Head.Transparency = 0
+Character.Head.face:Remove()
+Character.Torso.Transparency = 0
+Character["Right Arm"].Transparency = 0
+Character["Left Arm"].Transparency = 0
+Character["Right Leg"].Transparency = 0
+Character["Left Leg"].Transparency = 0
+local function align(i,v)
+local att0 = Instance.new("Attachment", i)
+att0.Position = Vector3.new(0,0,0)
+local att1 = Instance.new("Attachment", v)
+att1.Position = Vector3.new(0,0,0)
+local AP = Instance.new("AlignPosition", i)
+AP.Attachment0 = att0
+AP.Attachment1 = att1
+AP.RigidityEnabled = false
+AP.ReactionForceEnabled = false
+AP.ApplyAtCenterOfMass = true
+AP.MaxForce = 9999999
+AP.MaxVelocity = math.huge
+AP.Responsiveness = 65
+local AO = Instance.new("AlignOrientation", i)
+AO.Attachment0 = att0
+AO.Attachment1 = att1
+AO.ReactionTorqueEnabled = true
+AO.PrimaryAxisOnly = false
+AO.MaxTorque = 9999999
+AO.MaxAngularVelocity = math.huge
+AO.Responsiveness = 50
+end
+align(Hats.torso1.Handle, Character["Torso"])
+align(Hats.torso2.Handle, Character["Torso"])
+align(Hats.rightarm.Handle, Character["Torso"])
+align(Hats.leftarm.Handle, Character["Torso"])
+align(Hats.rightleg.Handle, Character["Torso"])
+align(Hats.leftleg.Handle, Character["Torso"])
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,0,0)--LeftLeg
+ 
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment1"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment2"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment3"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment4"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment5"
+ -- X Y Z
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-2,-3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0,-3,-2)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0,-3,2)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(2,-3,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-2,-3,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(2,-3,0)--RightLeg
+ 
+Character:WaitForChild(Head).Handle.AccessoryWeld:Remove()
+local alignpos = Instance.new("AlignPosition", Character)
+local alignorien = Instance.new("AlignOrientation", Character)
+local att1 = Instance.new("Attachment", Character:WaitForChild(Head).Handle)
+local att2 = Instance.new("Attachment", Character:WaitForChild("Head"))
+alignpos.Attachment0 = att1
+alignpos.Attachment1 = att2
+alignpos.RigidityEnabled = false
+alignpos.ReactionForceEnabled = false
+alignpos.ApplyAtCenterOfMass = true
+alignpos.MaxForce = 99999999
+alignpos.MaxVelocity = math.huge
+alignpos.Responsiveness = 65
+alignorien.Attachment0 = att1
+alignorien.Attachment1 = att2
+alignorien.ReactionTorqueEnabled = true
+alignorien.PrimaryAxisOnly = false
+alignorien.MaxTorque = 99999999
+alignorien.MaxAngularVelocity = math.huge
+alignorien.Responsiveness = 50
+att2.Position = Vector3.new(x,y,z)
+
+wait(4)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local UI = Material.Load({
+     Title = "AlphabetHub",
+     Style = 1,
+     SizeX = 200,
+     SizeY = 460,
+     Theme = "Dark",
+      ColorOverrides = {
+        MainFrame = Color3.fromRGB(2, 2, 2)
+      }
+
+    })
+local Page = UI.New({
+    Title = "Letters"
+})
+
+ Page.Button({
+        Text = "A",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-1,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0,4,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0,6,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1,5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1,3,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "B",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-0.5,6,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(1,7.5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(1,5.5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,3.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-2,4.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(-0.5,3,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftLeg
+end
+})
+    
+Page.Button({
+        Text = "C",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-0.5,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0.5,3,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0.5,7,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(1,4,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(-0.5,7,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,-90)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,-90)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "D",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(0.5,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-1,4,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-1,6,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(0.5,7,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(1,6,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1,4,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,90)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,90)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "E",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(1,4.5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(1,6,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(1,3,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(0.5,4.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(0,2.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(0,6.5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "F",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(1,4.5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(1,6,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(1,3,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(0.5,4.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(0.5,4.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(0,6.5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "G",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-0.5,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-1.5,3.5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-1,4.5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,5.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(1,3.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(-0.5,6,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,-90)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "H",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-1.5,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(1,4.5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-1,4.5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1.5,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1.5,6,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1.5,3,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "I",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-0.5,3.5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0,5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0,7,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(-0.5,8.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(0.5,8.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(0.5,3.5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "J",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(2,5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0,7,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0,5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,8,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1,8,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1.5,4.5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "K",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(0.5,5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-0.5,4,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-0.5,5.8,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(0.5,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(0.5,5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(0.5,4,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(-45,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(45,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "L",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(1.5,6,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-1,4.5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(1,4.5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1.5,9,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(1.5,7,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1.5,5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(0,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "M",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-1.3,4,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-0.42,6,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0.42,6,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1.3,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1.3,6,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1.3,4,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(45,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(-45,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "N",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-1.2,4,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(-0.45,5.9,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0.8,4.4,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1.4,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1.2,6,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(1.4,4,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(50,90,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(50,90,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "O",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(1.5,7.5,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(1.5,5.5,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-0,4.5,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(-0,8.5,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(-1.5,7.5,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(-1.5,5.5,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,90)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,90)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftLeg
+end
+})
+
+Page.Button({
+        Text = "U",
+        Callback = function()
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(-0.5,3,0)--LeftLeg
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0.5,3,0)--torso1
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(-1,6,0)--torso2
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(1,6,0)--RightArm
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(1,4,0)--LeftArm
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(-1,4,0)--RightLeg
+
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(90,0,-90)--torso1
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(90,0,0)--torso2
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightArm
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(90,0,0)--LeftArm
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(90,0,0)--RightLeg
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0)--LeftLeg
+end
+})
+    
