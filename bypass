@@ -1,0 +1,417 @@
+ --bypass
+
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Acrylix v2.0", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+-- values omgomgomgomg
+_G.sped = 16
+_G.jummp = 11
+_G.grav = 196
+-- function yay
+
+
+
+function resettt()
+    game.Players.LocalPlayer.Character.Head:Destroy()
+if game.Players.LocalPlayer.Character.Humanoid.Health < 5 then 
+    local deathmanok = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+    wait(1.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(deathmanok)
+end
+end
+
+function Headlesr15()
+	loadstring(game:HttpGet("https://pastebin.com/raw/aRrWpGgB", true))()
+end
+
+function swim()
+	loadstring(game:HttpGet("https://pastebin.com/raw/aRrWpGgB", true))()
+end
+
+function swim()
+	loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn", true))()
+end
+
+function netless()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
+end
+
+function MouseFling()
+	loadstring(game:HttpGet("https://pastebin.com/raw/Ga5aLA21", true))()
+end
+
+function HatSpin()
+	loadstring(game:HttpGet("https://pastebin.com/raw/32PbiWw1", true))()
+end
+
+function ChatHax()
+    loadstring(game:HttpGet("https://pastebin.com/raw/XFdQEjzx", true))()
+end
+
+function uglyspy()
+    loadstring(game:HttpGet('https://pastebin.com/raw/7GmZyarT'))()
+end
+
+function turtspy()
+    loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+end
+
+
+function adminn()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+
+function gravvv()
+    game.workspace.Gravity = _G.grav
+end
+
+function tab()
+	loadstring(game:HttpGet("https://pastebin.com/raw/EP9QK0Pu", true))()
+end
+
+function jummmp()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = _G.jummp
+end
+
+function walkspeed()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.sped
+end
+
+function btoolsgui()
+    loadstring(game:HttpGet('https://pastebin.com/raw/LETNPL0E'))()
+end
+-- SHE LIKE THE WAY THAT I RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+function btooltool()
+    a = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+a.BinType = 2
+b = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+b.BinType = 3
+c = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+c.BinType = 4
+end
+function snake()
+    loadstring(game:HttpGet("https://pastebin.com/raw/naRUdxrc", true))()
+end
+
+function amongus()
+    loadstring(game:HttpGet("https://pastebin.com/raw/0YCy2Nss", true))()
+end
+
+function noclip()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ue2BK9xJ", true))()
+end
+
+function esp()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
+end
+function qtp()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/qyww70GR'),true))()
+end
+
+function fly()
+    loadstring(game:HttpGet("https://pastebin.com/raw/E4Yw5kcw", true))()
+end
+
+function ezhub()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+end
+
+function darkhub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+end
+
+function infjump()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/V5PQy3y0')))()
+end
+
+function psyhub()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/Zt1a4aE9')))() 
+end
+
+function owlhub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end
+
+
+-- tabs n jitlang like that
+OrionLib:MakeNotification({
+	Name = "made by monkey boy bovi",
+	Content = "awpo is a slut",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+-- tabs
+local Info = Window:MakeTab({
+    Name = "Info",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+local Scripts = Window:MakeTab({
+    Name = "Scripts",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+
+local FeScripts = Window:MakeTab({
+    Name = "FE Scripts",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+local Hubs = Window:MakeTab({
+    Name = "Hubs",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+local Remotespys = Window:MakeTab({
+    Name = "Remote Spys",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Games = Window:MakeTab({
+    Name = "Games",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+
+Info:AddParagraph("Info","This script hub takes no credit for any of the scripts or hubs that are included.")
+Info:AddParagraph("Credits","Made by the skid clamtour, awpo is a slut, also credits to Orion for the library ")
+Games:AddParagraph("Games","No content yet. Check back later")
+
+-- butts
+FeScripts:AddButton({
+	Name = "Netless",
+	Callback = function()
+      		netless()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Infjump",
+	Callback = function()
+      		infjump()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Btools Tool",
+	Callback = function()
+      		btooltool()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Btools GUI",
+	Callback = function()
+      		btoolsgui()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "MouseFling",
+	Callback = function()
+      		MouseFling()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Esp",
+	Callback = function()
+      		esp()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "E to Fly",
+	Callback = function()
+      		fly()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Q To TP",
+	Callback = function()
+      		qtp()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Swim",
+	Callback = function()
+      		swim()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "FE Car *No hats*",
+	Callback = function()
+      		fecar()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "ChatHax",
+	Callback = function()
+      		ChatHax()
+  	end    
+})
+
+
+Scripts:AddButton({
+	Name = "ChatHax",
+	Callback = function()
+      		ChatHax()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Noclip",
+	Callback = function()
+      		noclip()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "Walk On Walls",
+	Callback = function()
+      		wows()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "Snake",
+	Callback = function()
+      		snake()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "Amongus",
+	Callback = function()
+      		amongus()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "FE Table (R6)",
+	Callback = function()
+      		tab()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "Headless (R15)",
+	Callback = function()
+      		Headlesr15()
+  	end    
+})
+
+FeScripts:AddButton({
+	Name = "HatSpin",
+	Callback = function()
+      		HatSpin()
+  	end    
+})
+
+Scripts:AddButton({
+	Name = "Admin Commands",
+	Callback = function()
+      		adminn()
+  	end    
+})
+
+Remotespys:AddButton({
+	Name = "Turtle Spy",
+	Callback = function()
+      		turtspy()
+  	end    
+})
+
+Remotespys:AddButton({
+	Name = "Ugly Spy",
+	Callback = function()
+      		uglyspy()
+  	end    
+})
+
+
+Hubs:AddButton({
+	Name = "Owl Hub",
+	Callback = function()
+      		owlhub()
+  	end    
+})
+
+Hubs:AddButton({
+	Name = "Dark Hub",
+	Callback = function()
+      		darkhub()
+  	end    
+})
+
+Hubs:AddButton({
+	Name = "Psy Hub",
+	Callback = function()
+      		psyhub()
+  	end    
+})
+
+Hubs:AddButton({
+	Name = "ez Hub",
+	Callback = function()
+      		ezhub()
+  	end    
+})
+-- sliders n jit lang
+Scripts:AddSlider({
+	Name = "WalkSpeed",
+	Min = 0,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Value",
+	Callback = function(Value)
+		_G.sped = Value
+        walkspeed()
+	end    
+})
+
+Scripts:AddSlider({
+	Name = "Jump Height",
+	Min = 0,
+	Max = 500,
+	Default = 11,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Value",
+	Callback = function(Value)
+		_G.jummp = Value
+        jummmp()
+	end    
+})
+
+Scripts:AddSlider({
+	Name =  "Gravity",
+	Min = 0,
+	Max = 196,
+	Default = 196,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Value",
+	Callback = function(Value)
+		_G.grav = Value
+        gravvv()
+	end    
+})
+OrionLib:Init()
