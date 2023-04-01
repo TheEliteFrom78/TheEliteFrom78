@@ -475,7 +475,7 @@ end
 Gamer5:Button("variety hub", function()
    loadstring(game:HttpGet(('https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/bypass'),true))()
     end);
-Gamer5:Button("sound fuck", function()
+Gamer5:Button("niquer les oreilles", function()
    loadstring(game:HttpGet(("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/soundfuck"),true))()
    end);
 library:Ready();
