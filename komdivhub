@@ -14,7 +14,9 @@ Gamer:Button("netless", function()
 Gamer:Button("fe hammer", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/bG4Bean4'))()
     end);
-
+Gamer:Button("alphabet hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/alphabet%20hub")()
+    end);
 local Gamer2 = library:CreateSection("GUIS");
 Gamer2:Button("Prevailx", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/mHfK0Xk4", true))()
