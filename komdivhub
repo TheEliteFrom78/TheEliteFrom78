@@ -8,6 +8,18 @@ local Gamer = library:CreateSection("FE");
 Gamer:Button("Fly hats", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/4B4fktPS", true))()
     end);
+Gamer:Button("FE building", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/fe%20building", true))()
+    end);
+Gamer:Button("FE monster", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/fe%20monster", true))()
+    end);
+Gamer:Button("FE neptunian", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/fe%20neptunian", true))()
+    end);
+Gamer:Button("fling arm (pal hair + 9 autres hats)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/fling%20arm", true))()
+    end);
 Gamer:Button("netless", function()
    loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
     end);
@@ -36,6 +48,9 @@ Gamer2:Button("wrath prison life", function()
 Gamer2:Button("tiger admin", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/MAIN'))()
     end);
+Gamer2:Button("fling gui", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/fling%20gui'))()
+    end);
 
 local Gamer3 = library:CreateSection("Misc");
 Gamer3:Button("prison life aimbot", function()
@@ -43,6 +58,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEli
 end);
 Gamer3:Button("aimlock", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/tThsQTxD"))()
+    end);
+Gamer3:Button("antilog", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/antilog"))()
+    end);
+Gamer3:Button("chatspy", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/chatspy"))()
     end);
 Gamer3:Button("btools", function()
     local tool1 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
