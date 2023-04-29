@@ -42,9 +42,6 @@ Gamer2:Button("dalloc admin", function()
 Gamer2:Button("dalloc gui", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ricardocruz5/pladmin/main/main.lua"))()
 end);
-Gamer2:Button("wrath prison life", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEliteFrom78/TheEliteFrom78/main/wrath"))()
-    end);
 Gamer2:Button("tiger admin", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/MAIN'))()
     end);
